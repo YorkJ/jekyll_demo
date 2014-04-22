@@ -1,2 +1,2 @@
 baseurl: /jekyll_demo
-markdown: redcarpet
+markdown: kramdown
