@@ -1,15 +1,36 @@
 ---
 layout: default
 ---
-<div id="post">
-{{ content }}
+<div id="recent">
+	<p>recent posts</p>
+	<ul class="posts">
+		{% for post in site.posts %}
+			<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+		{% endfor %}
+	</ul>
 </div>
-
+<div id="post">
+<div id="related-top">
+	{%if page.previous%}
+	<a href="{{ site.baseurl }}{{page.previous.url}}">&lt;=previous</a>
+	{%endif%}
+	{%if page.next%}
+	&nbsp;&nbsp;
+	<a href="{{ site.baseurl }}{{page.next.url}}">next=&gt;</a>
+	{%endif%}
+</div>
+{{ content }}
 <div id="related">
-  <h2>Related Posts</h2>
-  <ul class="posts">
-    {% for post in site.related_posts limit:3 %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+	<hr />
+  {%if page.previous%}
+  <span class="prev">
+	previous:<a href="{{ site.baseurl }}{{page.previous.url}}">{{page.previous.title}}</a>
+  </span>
+  {%endif%}
+  {%if page.next%}
+  <span class="next">
+	next:<a href="{{ site.baseurl }}{{page.next.url}}">{{page.next.title}}</a>
+  </span>
+  {%endif%}
+</div>
 </div>

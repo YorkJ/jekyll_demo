@@ -80,37 +80,38 @@ ul.posts {
 .site {
   font-size: 110%;
   text-align: justify;
-  width: 40em;
-  margin: 3em 30%;
+  width: 70em;
+  margin-top: 3em;
+  margin-left: 10em;
   line-height: 1.5em;
 }
 
 .content {
-	margin: 0 20%;
+	margin-left: 10em;
 }
 
-.title {
+#maininfo {
   color: #a00;
   font-weight: bold;
   margin-bottom: 2em;
 }
 
-  .site .title a {
+  .site #maininfo a {
     color: #a00;
     text-decoration: none;
   }
 
-  .site .title a:hover {
+  .site #maininfo a:hover {
     color: black;
   }
 
-  .site .title a.extra {
+  .site #maininfo a.extra {
     color: #999;
     text-decoration: none;
     margin-left: 1em;
   }
 
-  .site .title a.extra:hover {
+  .site #maininfo a.extra:hover {
     color: black;
   }
 
@@ -151,8 +152,14 @@ ul.posts {
 /*
 /*****************************************************************************/
 
-#post {
+#home {
+	margin-left: 15em;
+	margin-top: 3em;
+}
 
+#post {
+	width: 40em;
+	margin-top: 3em;
 }
 
   /* standard */
@@ -192,9 +199,29 @@ ul.posts {
   }
 
 #related {
-  margin-top: 2em;
+  margin-top: 5em;
+  margin-bottom: 5em;
 }
 
-  #related h2 {
-    margin-bottom: 1em;
+  .prev {
+   float: left;
   }
+  .next {
+    float: right;
+  }
+  
+#related-top {
+	float: right;
+}
+
+#recent {
+	float: right;
+	padding-left: 1em;
+	border-left-style: groove;
+}
+
+#backtop {
+	bottom: 2em;
+	right: 2em;
+	position:fixed;
+}
